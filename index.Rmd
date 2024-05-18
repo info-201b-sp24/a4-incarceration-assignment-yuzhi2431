@@ -1,5 +1,5 @@
 ---
-title: "A3: Incarceration"
+title: "A4: Incarceration"
 output: html_document
 ---
 
@@ -21,14 +21,7 @@ Feel free to calculate and report values that you find relevant. Again, remember
 
 ### The Dataset
 
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
-
+The incarceration data utilized in this analysis was compiled by the Vera Institute, a prominent nonprofit organization dedicated to criminal justice reform and research. The data collection process likely involved a combination of methods such as surveys, administrative records, and collaborations with various criminal justice agencies across the United States. The primary aim of this data collection effort was to comprehensively examine trends, disparities, and systemic issues within the U.S. criminal justice system, particularly concerning incarceration rates and their intersection with demographic factors such as race and socioeconomic status. With likely numerous observations representing diverse geographic regions, demographic profiles, and temporal snapshots, the dataset offers a rich source of information for understanding the complexities of incarceration in the United States. However, ethical considerations loom large in the analysis of such data. Questions regarding potential biases in data collection methods, power dynamics within the criminal justice system, and the ethical implications of research findings on affected communities must be carefully navigated. Furthermore, limitations such as sampling biases, incomplete data, and contextual factors affecting incarceration rates underscore the importance of critical scrutiny and cautious interpretation when working with this dataset.
 
 ### Trends Over Time Chart
 
@@ -46,7 +39,7 @@ When we say "clear" or "human readable" titles and labels, that means that you s
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
 
 ### Variable Comparison Chart
