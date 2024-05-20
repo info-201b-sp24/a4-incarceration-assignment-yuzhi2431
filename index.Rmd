@@ -1,23 +1,19 @@
 ---
 title: "A4: Incarceration"
+subtitle: "by Yuzhi Fan"
 output: html_document
 ---
 
 ### Introduction
 
-An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
+In recent decades, the issue of racial disparities in the U.S. criminal justice system has garnered significant attention. One of the most striking manifestations of this problem is the disproportionate incarceration rates among different racial groups, particularly between black and white individuals. This analysis aims to delve into these disparities by examining incarceration data, with a focus on understanding the extent and trends of racial disproportionality in prison and jail populations over time. By calculating and analyzing specific variables such as the proportion of black and white individuals in prisons and jails, we seek to uncover patterns and provide insights into the systemic issues contributing to these disparities. This exploration is crucial for informing policy decisions and advancing efforts toward a more equitable criminal justice system.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+```{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("summary.R")}
+```
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
-
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
+I calculated the proportion of black and white people in prison to be **`r black_prison_pop_por`**, and **`r white_prison_pop_por`** respectively. Also, I calculated the proportion of black and white people in jail to be **`r black_jail_pop_por`**, and **`r white_jail_pop_por`** respectively. Considering that white people comprise of approximately 2/3 of the entire US population, and black people is only about 10%, the proportion listed above is disproportionately high for black people, which indicates the present-day racism in policing behaviors and judicial systems. Furthermore, I calculated the max ratio of black people in jail occurred in **`r year_max_black_prison_porportion$year`** with a ratio of **`r year_max_black_prison_porportion$black_pop_por`**, and the min occurred in **`r year_min_black_prison_porportion$year`** with a ratio of **`r year_min_black_prison_porportion$black_pop_por`**. It shows that the racism situation is getting better over the years. 
 
 ### The Dataset
 
@@ -25,40 +21,25 @@ The incarceration data utilized in this analysis was compiled by the Vera Instit
 
 ### Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-```{r, echo = FALSE, code = readLines("chart1_example.R")}
+```{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("trends_over_time.R")}
 ```
+
+
+This chart have shown the proportion of black and white population in prison from 1970 to 2018. From the graph, we can clearly see that the proportion of black population in prison have decreased overtime, from over 60% in 1970 to about 40% in 2018. The gap between black and white population proportion is decreasing continuously also. However, considering that black population only comprise of about 10% of US society, and white population is almost 1/3, the black population proportion in prison is still disproportionately high.
+
 
 ### Variable Comparison Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+```{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("variable_comparison.R")}
+```
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+This chart have shown the correlation of black population proportion in prison and in society. It have shown a positive and strong relationship between the two variables. Also, there is a lot of datapoints on lower right half of the graph, indicating datapoints of prisons who have higher black prisoner proportion than the population proportion of the society. It reveals the racial injustice faced by black people, as their population proportion in prison is frequently higher than their population proportion in a region.
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
 
 ### Map
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+```{r, warning=FALSE, message=FALSE, echo = FALSE, code = readLines("map.R")}
+```
 
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
+This map have shown the proportion of black population in prison across different state in the US. The map clearly shows that the black population proportion in southeast part of the US is significantly higher than other states. This could mean that there is especially severe discrimination and racism against the black, or black population is higher than other regions as a whole.
 
